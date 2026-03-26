@@ -1,61 +1,49 @@
-'use client';
+import Link from 'next/link';
 
-import Image from 'next/image';
-import { Article } from '@/lib/markdown';
-
-interface HeroSectionProps {
-  hero1?: Article;
-  hero2: Article[];
-  hero3?: Article;
-}
-
-export default function HeroSection({ hero1, hero2 }: HeroSectionProps) {
-  if (!hero1) return null;
-
+export default function HeroSection() {
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white py-16 md:py-24">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center space-y-8">
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-            {hero1.title}
+    <section className="relative min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1600')",
+        }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/60 to-gray-900/30" aria-hidden="true" />
+
+      <div className="relative container mx-auto px-4 py-20 md:py-28">
+        <div className="max-w-2xl">
+          <p className="text-blue-300 font-semibold text-sm md:text-base uppercase tracking-widest mb-4">
+            BtoBマーケティング支援
+          </p>
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+            マーケティングの
+            <br />
+            課題を、
+            <span className="text-blue-400">一気通貫</span>で
+            <br />
+            解決します。
           </h1>
-
-          {hero1.image && (
-            <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
-              <Image
-                src={hero1.image}
-                alt={hero1.image_alt || hero1.title}
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          )}
-
-          {hero1.content && (
-            <div
-              className="article-content text-base md:text-lg text-gray-700 leading-relaxed text-left"
-              dangerouslySetInnerHTML={{ __html: hero1.content }}
-            />
-          )}
-        </div>
-
-        {hero2.length > 0 && (
-          <div className="mt-16 grid grid-cols-3 md:flex md:justify-center md:items-center gap-4 md:gap-12 px-4 md:px-8">
-            {hero2.map((article) => (
-              article.image && (
-                <div key={article.slug} className="relative w-full h-[60px] md:w-[240px] md:h-[120px]">
-                  <Image
-                    src={article.image}
-                    alt={article.image_alt || article.title}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              )
-            ))}
+          <p className="text-gray-200 text-base md:text-lg leading-relaxed mb-10 max-w-xl">
+            施策の立案から実行・分析まで、貴社専任のチームが伴走。
+            成果にコミットするBtoBマーケティング支援サービスです。
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href="#contact"
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg text-base text-center transition-colors duration-200 shadow-lg"
+            >
+              資料を無料請求する
+            </Link>
+            <Link
+              href="/consultation"
+              className="inline-block bg-white/10 hover:bg-white/20 text-white border border-white/40 font-semibold px-8 py-4 rounded-lg text-base text-center transition-colors duration-200 backdrop-blur-sm"
+            >
+              無料オンライン相談
+            </Link>
           </div>
-        )}
+        </div>
       </div>
     </section>
   );

@@ -1,137 +1,68 @@
-'use client';
+import { CircleCheck as CheckCircle2 } from 'lucide-react';
 
-import { useState } from 'react';
-import Image from 'next/image';
-import { Article } from '@/lib/markdown';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { X, MousePointerClick } from 'lucide-react';
+const solutions = [
+  {
+    number: '01',
+    title: '戦略立案から実行まで一気通貫',
+    description:
+      '市場調査・競合分析・ターゲット設計から施策の実行・改善まで、すべてワンチームで対応。社内リソースの負担を最小限に、最大の成果を実現します。',
+    points: ['マーケティング戦略の策定', '施策ロードマップの設計', 'KPI設定と進捗管理'],
+  },
+  {
+    number: '02',
+    title: 'データドリブンな継続改善',
+    description:
+      'GA4・広告プラットフォームなど各種ツールのデータを横断的に分析。数字に基づいたPDCAサイクルで、施策の精度を継続的に高めていきます。',
+    points: ['多チャネルデータの統合分析', 'レポーティング・可視化', '月次改善提案'],
+  },
+  {
+    number: '03',
+    title: '専任チームによる伴走サポート',
+    description:
+      'ディレクター・デザイナー・ライター・エンジニアが一体となり、貴社のビジネス成長をサポート。対話を重ねながら、最適な施策を柔軟に実行します。',
+    points: ['専任プロジェクトマネージャー配置', '定例MTGによる密なコミュニケーション', '柔軟なプラン変更対応'],
+  },
+];
 
-interface SolutionSectionProps {
-  solution1?: Article;
-  solution2: Article[];
-}
-
-export default function SolutionSection({ solution1, solution2 }: SolutionSectionProps) {
-  const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
-
-  if (!solution1) return null;
-
-  const getGridLayout = (articles: Article[]) => {
-    const count = articles.length;
-    const rows: Article[][] = [];
-
-    if (count <= 3) {
-      rows.push(articles);
-    } else {
-      let remaining = [...articles];
-      while (remaining.length > 0) {
-        if (remaining.length >= 3) {
-          rows.push(remaining.slice(0, 3));
-          remaining = remaining.slice(3);
-        } else {
-          rows.push(remaining);
-          remaining = [];
-        }
-      }
-    }
-
-    return rows;
-  };
-
-  const rows = getGridLayout(solution2);
-
+export default function SolutionSection() {
   return (
-    <>
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-2xl md:text-4xl font-bold mb-6" style={{ color: '#033688' }}>
-              {solution1.title}
-            </h2>
-            <div
-              className="article-content text-lg text-gray-600 leading-relaxed"
-              dangerouslySetInnerHTML={{ __html: solution1.content }}
-            />
-          </div>
-
-          {solution2.length > 0 && (
-            <div className="space-y-8 max-w-6xl mx-auto">
-              {rows.map((row, rowIndex) => (
-                <div
-                  key={rowIndex}
-                  className={`grid gap-8 ${
-                    row.length === 3
-                      ? 'grid-cols-1 md:grid-cols-3'
-                      : row.length === 2
-                      ? 'grid-cols-1 md:grid-cols-2 max-w-3xl mx-auto'
-                      : 'grid-cols-1 max-w-sm mx-auto'
-                  }`}
-                >
-                  {row.map((article) => (
-                    <div
-                      key={article.slug}
-                      onClick={() => setSelectedArticle(article)}
-                      className="relative bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
-                    >
-                      <div className="absolute top-2 right-2 z-10 bg-blue-600 text-white rounded-full p-1.5 shadow-md opacity-80 group-hover:opacity-100 pointer-events-none">
-                        <MousePointerClick size={14} />
-                      </div>
-                      {article.image && (
-                        <div className="flex justify-center pt-2">
-                          <div className="relative w-64 h-36">
-                            <Image
-                              src={article.image}
-                              alt={article.image_alt || article.title}
-                              fill
-                              className="object-cover rounded"
-                            />
-                          </div>
-                        </div>
-                      )}
-
-                      <div className="p-6">
-                        <h3 className="text-lg font-bold text-gray-900 text-center">
-                          {article.title}
-                        </h3>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </div>
-          )}
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">Solution</p>
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-5">
+            MarkeShitenが選ばれる理由
+          </h2>
+          <p className="text-gray-500 text-base leading-relaxed">
+            戦略・実行・分析をワンチームで担うことで、スピーディーかつ一貫した成果を提供します。
+          </p>
         </div>
-      </section>
 
-      <Dialog open={!!selectedArticle} onOpenChange={() => setSelectedArticle(null)}>
-        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-          {selectedArticle && (
-            <>
-              <DialogHeader>
-                <DialogTitle className="text-2xl font-bold text-center">
-                  {selectedArticle.title}
-                </DialogTitle>
-              </DialogHeader>
-
-              {selectedArticle.image && (
-                <div className="relative w-full aspect-[4/3] mb-6">
-                  <Image
-                    src={selectedArticle.image}
-                    alt={selectedArticle.image_alt || selectedArticle.title}
-                    fill
-                    className="object-cover rounded"
-                  />
-                </div>
-              )}
-
-              <div
-                className="article-content text-gray-600 leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: selectedArticle.content }}
-              />
-            </>
-          )}
-        </DialogContent>
-      </Dialog>
-    </>
+        <div className="max-w-5xl mx-auto space-y-8">
+          {solutions.map((solution, index) => (
+            <div
+              key={index}
+              className="bg-gray-50 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition-shadow duration-300"
+            >
+              <div className="flex-shrink-0">
+                <span className="text-5xl font-black text-blue-100 select-none">{solution.number}</span>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">{solution.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed mb-5">{solution.description}</p>
+                <ul className="space-y-2">
+                  {solution.points.map((point, i) => (
+                    <li key={i} className="flex items-center gap-2 text-sm text-gray-700">
+                      <CheckCircle2 className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
