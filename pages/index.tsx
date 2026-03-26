@@ -4,7 +4,6 @@ import Footer from '@/components/Footer';
 import HeroSection from '@/components/sections/HeroSection';
 import ProblemSection from '@/components/sections/ProblemSection';
 import SolutionSection from '@/components/sections/SolutionSection';
-import ProductSection from '@/components/sections/ProductSection';
 import FlowSection from '@/components/sections/FlowSection';
 import FAQSection from '@/components/sections/FAQSection';
 import ContactSection from '@/components/sections/ContactSection';
@@ -28,7 +27,6 @@ export default function HomePage() {
         <HeroSection />
         <ProblemSection />
         <SolutionSection />
-        <ProductSection />
         <FlowSection />
         <FAQSection />
         <ContactSection />
