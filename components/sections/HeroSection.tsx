@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { Article } from '@/lib/markdown';
-import DocumentRequestForm from '@/components/DocumentRequestForm';
 
 interface HeroSectionProps {
   hero1?: Article;
@@ -10,47 +9,35 @@ interface HeroSectionProps {
   hero3?: Article;
 }
 
-export default function HeroSection({ hero1, hero2, hero3 }: HeroSectionProps) {
+export default function HeroSection({ hero1, hero2 }: HeroSectionProps) {
   if (!hero1) return null;
 
   return (
     <section className="bg-gradient-to-b from-gray-50 to-white py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          <div className="space-y-8">
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-              {hero1.title}
-            </h1>
+        <div className="max-w-3xl mx-auto text-center space-y-8">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+            {hero1.title}
+          </h1>
 
-            {hero1.image && (
-              <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
-                <Image
-                  src={hero1.image}
-                  alt={hero1.image_alt || hero1.title}
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            )}
-
-            {hero1.content && (
-              <div
-                className="article-content text-base md:text-lg text-gray-700 leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: hero1.content }}
+          {hero1.image && (
+            <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src={hero1.image}
+                alt={hero1.image_alt || hero1.title}
+                fill
+                className="object-cover"
+                priority
               />
-            )}
-          </div>
+            </div>
+          )}
 
-          <div className="bg-white rounded-xl shadow-xl p-8 lg:sticky lg:top-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-              資料請求
-            </h2>
-            <DocumentRequestForm
-              docTitle={hero3?.title}
-              docContent={hero3?.content}
+          {hero1.content && (
+            <div
+              className="article-content text-base md:text-lg text-gray-700 leading-relaxed text-left"
+              dangerouslySetInnerHTML={{ __html: hero1.content }}
             />
-          </div>
+          )}
         </div>
 
         {hero2.length > 0 && (
