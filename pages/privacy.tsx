@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Header from '@/components/Header';
+import LPHeader from '@/components/LPHeader';
 import Footer from '@/components/Footer';
 
 export default function PrivacyPage() {
@@ -11,7 +11,7 @@ export default function PrivacyPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <Header />
+      <LPHeader />
 
       <main className="bg-white py-16">
         <div className="container mx-auto px-4 max-w-4xl">

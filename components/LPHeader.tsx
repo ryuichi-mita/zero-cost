@@ -10,9 +10,9 @@ export default function LPHeader() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-      <div className="container mx-auto flex h-24 items-center justify-between px-4">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
-          <div className="relative h-[120px] w-auto">
+          <div className="relative h-[60px] w-auto">
             <Image
               src="/zero-cost-logo.webp"
               alt="MarkeShiten サービスロゴ"

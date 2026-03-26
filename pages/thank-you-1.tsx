@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import Header from '@/components/Header';
+import LPHeader from '@/components/LPHeader';
 import Footer from '@/components/Footer';
 import OnlineConsultationForm from '@/components/OnlineConsultationForm';
 
@@ -31,7 +31,7 @@ export default function ThankYou1() {
       </Head>
 
       <div className="min-h-screen flex flex-col">
-        <Header />
+        <LPHeader />
 
         <main className="flex-grow">
           <section className="py-20 bg-gray-50">
