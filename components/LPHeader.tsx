@@ -14,7 +14,7 @@ export default function LPHeader() {
         <Link href="/" className="flex items-center space-x-2">
           <div className="relative h-[120px] w-auto">
             <Image
-              src="/markeshiten.png"
+              src="/zero-cost-logo.webp"
               alt="MarkeShiten サービスロゴ"
               width={1400}
               height={360}
