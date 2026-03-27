@@ -4,11 +4,12 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 export default function HeroSection() {
-  const [phase, setPhase] = useState<'idle' | 'text' | 'border'>('idle');
+  const [textVisible, setTextVisible] = useState(false);
+  const [borderVisible, setBorderVisible] = useState(false);
 
   useEffect(() => {
-    const t1 = setTimeout(() => setPhase('text'), 100);
-    const t2 = setTimeout(() => setPhase('border'), 1400);
+    const t1 = setTimeout(() => setTextVisible(true), 100);
+    const t2 = setTimeout(() => setBorderVisible(true), 1200);
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
@@ -17,13 +18,13 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-[680px] md:min-h-[780px] flex items-center overflow-hidden">
-      {/* Background image with zoom-in */}
+      {/* Background image zoom-in: scale(0.8) → scale(1) */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
             "url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600')",
-          animation: 'heroZoom 8s ease-out forwards',
+          animation: 'heroZoomIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards',
         }}
         aria-hidden="true"
       />
@@ -34,34 +35,79 @@ export default function HeroSection() {
         aria-hidden="true"
       />
 
-      {/* Border animation overlay */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        aria-hidden="true"
-        style={{
-          boxShadow: phase === 'border'
-            ? 'inset 0 0 0 8px rgba(59,130,246,0.55)'
-            : 'inset 0 0 0 0px rgba(59,130,246,0)',
-          transition: 'box-shadow 1.2s cubic-bezier(0.4,0,0.2,1)',
-        }}
-      />
+      {/* Border strokes — 4 edges drawn independently */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        {/* top: right-aligned, grows left-to-right from right edge */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            height: 0,
+            borderTop: '3px solid rgba(96,165,250,0.7)',
+            opacity: borderVisible ? 1 : 0,
+            width: borderVisible ? 'calc(100% - 20px)' : 0,
+            animation: borderVisible
+              ? 'strokeWidth 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards'
+              : 'none',
+          }}
+        />
+        {/* bottom: left-aligned, grows right-to-left from left edge */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            height: 0,
+            borderBottom: '3px solid rgba(96,165,250,0.7)',
+            opacity: borderVisible ? 1 : 0,
+            width: borderVisible ? 'calc(100% - 20px)' : 0,
+            animation: borderVisible
+              ? 'strokeWidth 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards'
+              : 'none',
+          }}
+        />
+        {/* right: top-aligned, grows top-to-bottom */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            width: 0,
+            borderRight: '3px solid rgba(96,165,250,0.7)',
+            opacity: borderVisible ? 1 : 0,
+            height: borderVisible ? 'calc(100% - 20px)' : 0,
+            animation: borderVisible
+              ? 'strokeHeight 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards'
+              : 'none',
+          }}
+        />
+        {/* left: bottom-aligned, grows bottom-to-top */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            width: 0,
+            borderLeft: '3px solid rgba(96,165,250,0.7)',
+            opacity: borderVisible ? 1 : 0,
+            height: borderVisible ? 'calc(100% - 20px)' : 0,
+            animation: borderVisible
+              ? 'strokeHeight 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards'
+              : 'none',
+          }}
+        />
+      </div>
 
       {/* Content */}
       <div className="relative container mx-auto px-4 py-20 md:py-32">
-        <div
-          className="max-w-2xl"
-          style={{
-            opacity: phase === 'idle' ? 0 : 1,
-            transform: phase === 'idle' ? 'translateX(-40px)' : 'translateX(0)',
-            transition: 'opacity 0.9s ease-out, transform 0.9s ease-out',
-          }}
-        >
+        <div className="max-w-2xl">
           {/* Eyebrow */}
           <p
             className="text-blue-300 font-semibold text-sm md:text-base tracking-widest mb-5"
             style={{
-              opacity: phase === 'idle' ? 0 : 1,
-              transform: phase === 'idle' ? 'translateX(-30px)' : 'translateX(0)',
+              opacity: textVisible ? 1 : 0,
+              transform: textVisible ? 'translateX(0)' : 'translateX(-36px)',
               transition: 'opacity 0.8s ease-out 0.1s, transform 0.8s ease-out 0.1s',
             }}
           >
@@ -72,8 +118,8 @@ export default function HeroSection() {
           <h1
             className="text-3xl md:text-5xl lg:text-[3.25rem] font-bold text-white leading-tight mb-5"
             style={{
-              opacity: phase === 'idle' ? 0 : 1,
-              transform: phase === 'idle' ? 'translateX(-30px)' : 'translateX(0)',
+              opacity: textVisible ? 1 : 0,
+              transform: textVisible ? 'translateX(0)' : 'translateX(-36px)',
               transition: 'opacity 0.85s ease-out 0.25s, transform 0.85s ease-out 0.25s',
             }}
           >
@@ -86,8 +132,8 @@ export default function HeroSection() {
           <p
             className="text-blue-100 text-base md:text-lg font-medium mb-6"
             style={{
-              opacity: phase === 'idle' ? 0 : 1,
-              transform: phase === 'idle' ? 'translateX(-30px)' : 'translateX(0)',
+              opacity: textVisible ? 1 : 0,
+              transform: textVisible ? 'translateX(0)' : 'translateX(-36px)',
               transition: 'opacity 0.85s ease-out 0.4s, transform 0.85s ease-out 0.4s',
             }}
           >
@@ -98,8 +144,8 @@ export default function HeroSection() {
           <ul
             className="space-y-2 mb-10"
             style={{
-              opacity: phase === 'idle' ? 0 : 1,
-              transform: phase === 'idle' ? 'translateX(-30px)' : 'translateX(0)',
+              opacity: textVisible ? 1 : 0,
+              transform: textVisible ? 'translateX(0)' : 'translateX(-36px)',
               transition: 'opacity 0.85s ease-out 0.55s, transform 0.85s ease-out 0.55s',
             }}
           >
@@ -123,8 +169,8 @@ export default function HeroSection() {
           <div
             className="flex flex-col sm:flex-row gap-4"
             style={{
-              opacity: phase === 'idle' ? 0 : 1,
-              transform: phase === 'idle' ? 'translateX(-30px)' : 'translateX(0)',
+              opacity: textVisible ? 1 : 0,
+              transform: textVisible ? 'translateX(0)' : 'translateX(-36px)',
               transition: 'opacity 0.85s ease-out 0.7s, transform 0.85s ease-out 0.7s',
             }}
           >
@@ -145,9 +191,37 @@ export default function HeroSection() {
       </div>
 
       <style jsx>{`
-        @keyframes heroZoom {
-          from { transform: scale(1.12); }
-          to   { transform: scale(1); }
+        @keyframes heroZoomIn {
+          0% {
+            transform: scale(0.8);
+            opacity: 0;
+          }
+          100% {
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+
+        @keyframes strokeWidth {
+          0% {
+            width: 0;
+            opacity: 1;
+          }
+          100% {
+            width: calc(100% - 20px);
+            opacity: 1;
+          }
+        }
+
+        @keyframes strokeHeight {
+          0% {
+            height: 0;
+            opacity: 1;
+          }
+          100% {
+            height: calc(100% - 20px);
+            opacity: 1;
+          }
         }
       `}</style>
     </section>
