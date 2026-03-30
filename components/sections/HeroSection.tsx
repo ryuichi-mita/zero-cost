@@ -184,7 +184,7 @@ export default function HeroSection() {
             </Link>
             <Link
               href="/consultation"
-              className="inline-block bg-white/10 hover:bg-white/20 text-white border border-white/40 font-semibold px-8 py-4 rounded-lg text-base text-center transition-colors duration-200 backdrop-blur-sm"
+              className="inline-block bg-white hover:bg-gray-100 text-blue-700 border-2 border-white font-semibold px-8 py-4 rounded-lg text-base text-center transition-colors duration-200 shadow-lg"
             >
               無料オンライン相談
             </Link>
