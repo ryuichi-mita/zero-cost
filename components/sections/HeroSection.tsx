@@ -104,7 +104,7 @@ export default function HeroSection() {
         <div className="max-w-2xl">
           {/* Eyebrow */}
           <p
-            className="text-lg md:text-xl font-semibold tracking-wide mb-4"
+            className="text-xl md:text-2xl font-semibold tracking-wide mb-4"
             style={{
               color: '#1e3a5f',
               opacity: textVisible ? 1 : 0,
@@ -131,7 +131,7 @@ export default function HeroSection() {
 
           {/* Lead copy */}
           <p
-            className="text-base md:text-lg font-medium mb-6"
+            className="text-lg md:text-xl font-medium mb-6"
             style={{
               color: '#1f2937',
               opacity: textVisible ? 1 : 0,
@@ -156,7 +156,7 @@ export default function HeroSection() {
               '地域名・業種での検索最適化に特化したローカルSEO',
               '費用対効果の高い集客を実現する専門家サポート',
             ].map((item) => (
-              <li key={item} className="flex items-start gap-2 text-sm md:text-sm" style={{ color: '#374151' }}>
+              <li key={item} className="flex items-start gap-2 text-base md:text-lg" style={{ color: '#374151' }}>
                 <span className="mt-1 flex-shrink-0 w-4 h-4 rounded-full bg-blue-500 flex items-center justify-center shadow-md">
                   <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 10 8" aria-hidden="true">
                     <path d="M1 4l2.5 2.5L9 1" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
