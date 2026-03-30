@@ -1,20 +1,20 @@
-import { CircleAlert as AlertCircle } from 'lucide-react';
+import { Wallet, CircleHelp as HelpCircle, MapPin, ChevronDown } from 'lucide-react';
 
 const problems = [
   {
-    title: '施策がバラバラで成果が出ない',
-    description:
-      '広告・SEO・SNSなど複数の施策を個別に運用しているため、一貫したメッセージを届けられずリードが獲得できていない。',
+    icon: Wallet,
+    title: '費用をかけたくない',
+    description: '開業したばかりで、ホームページ制作や広告にかけられる費用が少ない',
   },
   {
-    title: 'リソース不足で手が回らない',
-    description:
-      '社内にマーケティング専任担当がいないため、継続的な施策の実行・改善ができず、競合他社に差をつけられてしまっている。',
+    icon: HelpCircle,
+    title: '集客方法が分からない',
+    description: 'インターネットでの集客の具体的な方法や効果的な手段が分からない',
   },
   {
-    title: '成果の見える化ができていない',
-    description:
-      '広告費やコンテンツ制作のコストに対して、どの施策が売上に貢献しているのか分からず、投資対効果が不透明なまま。',
+    icon: MapPin,
+    title: '地域で見つけてほしい',
+    description: '地元のお客様に知ってもらい、来店・利用に繋げたい',
   },
 ];
 
@@ -22,29 +22,38 @@ export default function ProblemSection() {
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">Problem</p>
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-5">
-            こんな課題、抱えていませんか？
-          </h2>
-          <p className="text-gray-500 text-base leading-relaxed">
-            多くのBtoB企業が、マーケティングに関して同じ壁にぶつかっています。
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <p className="text-blue-600 font-semibold text-base tracking-wide mb-4">
+            ホームページ制作でお困りごとはありませんか？
           </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+            開業初期の資金不足と集客方法の<br />不安を解決します
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {problems.map((problem, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
-            >
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-red-50 mb-5">
-                <AlertCircle className="w-6 h-6 text-red-500" />
+          {problems.map((problem, index) => {
+            const Icon = problem.icon;
+            return (
+              <div
+                key={index}
+                className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
+              >
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-red-50 mb-5">
+                  <Icon className="w-6 h-6 text-red-500" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{problem.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{problem.description}</p>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">{problem.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{problem.description}</p>
-            </div>
-          ))}
+            );
+          })}
+        </div>
+
+        <div className="flex flex-col items-center mt-12 gap-4">
+          <ChevronDown className="w-8 h-8 text-blue-400 animate-bounce" />
+          <p className="text-center text-gray-700 font-semibold text-base md:text-lg max-w-xl leading-relaxed">
+            月額無料＋地域名・業種での検索に強いホームページで、<br className="hidden sm:block" />開業初期のビジネスを支えます
+          </p>
         </div>
       </div>
     </section>
