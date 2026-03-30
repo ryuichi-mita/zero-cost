@@ -58,7 +58,7 @@ export default function ProblemSection() {
         <div className="flex flex-col items-center mt-12 gap-4">
           <ChevronDown className="w-8 h-8 text-blue-400 animate-bounce" />
           <p className="text-center text-gray-700 font-semibold text-sm md:text-lg max-w-xl leading-relaxed">
-            月額無料＋地域名・業種での検索に強いホームページで、<br />開業初期のビジネスを支えます
+            月額無料＋地域名・業種検索に強いホームページで、<br />開業初期のビジネスを支えます
           </p>
         </div>
       </div>
