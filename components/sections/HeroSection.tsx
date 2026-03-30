@@ -159,7 +159,7 @@ export default function HeroSection() {
               '地域名・業種での検索最適化に特化したローカルSEO',
               '費用対効果の高い集客を実現する専門家サポート',
             ].map((item) => (
-              <li key={item} className="flex items-start gap-2 text-sm md:text-sm" style={{ color: '#e0f2fe', textShadow: '0 1px 6px rgba(0,0,0,0.65)' }}>
+              <li key={item} className="flex items-start gap-2 text-sm md:text-sm" style={{ color: '#42424242', textShadow: '0 1px 6px rgba(0,0,0,0.65)' }}>
                 <span className="mt-1 flex-shrink-0 w-4 h-4 rounded-full bg-blue-500 flex items-center justify-center shadow-md">
                   <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 10 8" aria-hidden="true">
                     <path d="M1 4l2.5 2.5L9 1" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
