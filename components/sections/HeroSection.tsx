@@ -31,7 +31,7 @@ export default function HeroSection() {
 
       {/* Overlay */}
       <div
-        className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/75 to-white/40"
+        className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/60 to-white/25"
         aria-hidden="true"
       />
 
@@ -184,7 +184,7 @@ export default function HeroSection() {
             </Link>
             <Link
               href="/consultation"
-              className="inline-block bg-white hover:bg-gray-100 text-blue-700 border-2 border-white font-semibold px-8 py-4 rounded-lg text-base text-center transition-colors duration-200 shadow-lg"
+              className="inline-block bg-transparent hover:bg-blue-700 text-blue-700 hover:text-white border-2 border-blue-700 font-semibold px-8 py-4 rounded-lg text-base text-center transition-colors duration-200 shadow-md"
             >
               無料オンライン相談
             </Link>
