@@ -45,7 +45,7 @@ export default function SolutionSection() {
               className="bg-gray-50 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition-shadow duration-300"
             >
               <div className="flex-shrink-0">
-                <span className="text-5xl font-black text-blue-100 select-none">{solution.number}</span>
+                <span className="text-5xl font-black text-blue-300 select-none">{solution.number}</span>
               </div>
               <div className="flex-1">
                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">{solution.title}</h3>
