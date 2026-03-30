@@ -3,10 +3,10 @@ import { CircleCheck as CheckCircle2 } from 'lucide-react';
 const solutions = [
   {
     number: '01',
-    title: '戦略立案から実行まで一気通貫',
+    title: '開業初期の資金負担を最小限に',
     description:
       '市場調査・競合分析・ターゲット設計から施策の実行・改善まで、すべてワンチームで対応。社内リソースの負担を最小限に、最大の成果を実現します。',
-    points: ['マーケティング戦略の策定', '施策ロードマップの設計', 'KPI設定と進捗管理'],
+    points: ['月のランニングコストを０に', '施策ロードマップの設計', 'KPI設定と進捗管理'],
   },
   {
     number: '02',
