@@ -31,7 +31,7 @@ export default function HeroSection() {
 
       {/* Overlay */}
       <div
-        className="absolute inset-0 bg-gradient-to-r from-gray-900/85 via-gray-900/65 to-gray-900/30"
+        className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/75 to-white/40"
         aria-hidden="true"
       />
 
@@ -44,7 +44,7 @@ export default function HeroSection() {
             top: 0,
             right: 0,
             height: 0,
-            borderTop: '3px solid rgba(96,165,250,0.7)',
+            borderTop: '3px solid rgba(29,78,216,0.5)',
             opacity: borderVisible ? 1 : 0,
             width: borderVisible ? 'calc(100% - 20px)' : 0,
             animation: borderVisible
@@ -59,7 +59,7 @@ export default function HeroSection() {
             bottom: 0,
             left: 0,
             height: 0,
-            borderBottom: '3px solid rgba(96,165,250,0.7)',
+            borderBottom: '3px solid rgba(29,78,216,0.5)',
             opacity: borderVisible ? 1 : 0,
             width: borderVisible ? 'calc(100% - 20px)' : 0,
             animation: borderVisible
@@ -74,7 +74,7 @@ export default function HeroSection() {
             top: 0,
             right: 0,
             width: 0,
-            borderRight: '3px solid rgba(96,165,250,0.7)',
+            borderRight: '3px solid rgba(29,78,216,0.5)',
             opacity: borderVisible ? 1 : 0,
             height: borderVisible ? 'calc(100% - 20px)' : 0,
             animation: borderVisible
@@ -89,7 +89,7 @@ export default function HeroSection() {
             bottom: 0,
             left: 0,
             width: 0,
-            borderLeft: '3px solid rgba(96,165,250,0.7)',
+            borderLeft: '3px solid rgba(29,78,216,0.5)',
             opacity: borderVisible ? 1 : 0,
             height: borderVisible ? 'calc(100% - 20px)' : 0,
             animation: borderVisible
@@ -104,10 +104,9 @@ export default function HeroSection() {
         <div className="max-w-2xl">
           {/* Eyebrow */}
           <p
-            className="text-lg md:text-xl font-semibold tracking-wide mb-4 drop-shadow-md"
+            className="text-lg md:text-xl font-semibold tracking-wide mb-4"
             style={{
-              color: '#ffffff',
-              textShadow: '0 1px 6px rgba(0,0,0,0.7)',
+              color: '#1e3a5f',
               opacity: textVisible ? 1 : 0,
               transform: textVisible ? 'translateX(0)' : 'translateX(-36px)',
               transition: 'opacity 0.8s ease-out 0.1s, transform 0.8s ease-out 0.1s',
@@ -120,23 +119,21 @@ export default function HeroSection() {
           <h1
             className="text-3xl md:text-5xl lg:text-[3.25rem] font-bold leading-tight mb-5"
             style={{
-              color: '#ffffff',
-              textShadow: '0 2px 12px rgba(0,0,0,0.75)',
+              color: '#111827',
               opacity: textVisible ? 1 : 0,
               transform: textVisible ? 'translateX(0)' : 'translateX(-36px)',
               transition: 'opacity 0.85s ease-out 0.25s, transform 0.85s ease-out 0.25s',
             }}
           >
             <span className="whitespace-nowrap">月額無料＆地域名・業種特化型</span><br />
-            <span style={{ color: '#60a5fa', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>ホームページを格安制作</span>
+            <span style={{ color: '#1d4ed8' }}>ホームページを格安制作</span>
           </h1>
 
           {/* Lead copy */}
           <p
             className="text-base md:text-lg font-medium mb-6"
             style={{
-              color: '#f0f9ff',
-              textShadow: '0 1px 8px rgba(0,0,0,0.7)',
+              color: '#1f2937',
               opacity: textVisible ? 1 : 0,
               transform: textVisible ? 'translateX(0)' : 'translateX(-36px)',
               transition: 'opacity 0.85s ease-out 0.4s, transform 0.85s ease-out 0.4s',
@@ -159,7 +156,7 @@ export default function HeroSection() {
               '地域名・業種での検索最適化に特化したローカルSEO',
               '費用対効果の高い集客を実現する専門家サポート',
             ].map((item) => (
-              <li key={item} className="flex items-start gap-2 text-sm md:text-sm" style={{ color: '#42424242', textShadow: '0 1px 6px rgba(0,0,0,0.65)' }}>
+              <li key={item} className="flex items-start gap-2 text-sm md:text-sm" style={{ color: '#374151' }}>
                 <span className="mt-1 flex-shrink-0 w-4 h-4 rounded-full bg-blue-500 flex items-center justify-center shadow-md">
                   <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 10 8" aria-hidden="true">
                     <path d="M1 4l2.5 2.5L9 1" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
