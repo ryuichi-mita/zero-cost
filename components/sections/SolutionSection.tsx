@@ -49,7 +49,7 @@ export default function SolutionSection() {
               </div>
               <div className="flex-1">
                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">{solution.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-5">{solution.description}</p>
+                <p className="text-gray-800 text-sm leading-relaxed mb-5">{solution.description}</p>
                 <ul className="space-y-2">
                   {solution.points.map((point, i) => (
                     <li key={i} className="flex items-center gap-2 text-sm text-gray-900">
