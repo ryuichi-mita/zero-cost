@@ -29,9 +29,9 @@ export default function SolutionSection() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">Solution</p>
+          <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">スタートダッシュWebが選ばれる理由</p>
           <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-5">
-            MarkeShitenが選ばれる理由
+            費用対効果の高い集客を実現
           </h2>
           <p className="text-gray-500 text-sm md:text-base leading-relaxed">
             戦略・実行・分析をワンチームで担うことで、<wbr />スピーディーかつ一貫した成果を提供します。
