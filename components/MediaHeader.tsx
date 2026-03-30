@@ -14,7 +14,7 @@ export default function MediaHeader() {
         <Link href="/media" className="flex items-center space-x-2">
           <div className="relative h-[60px] w-auto">
             <Image
-              src="/zero-cost-logo.webp"
+              src="/startdashWeb-Logo.webp"
               alt="MarkeShiten サービスロゴ"
               width={1400}
               height={360}
