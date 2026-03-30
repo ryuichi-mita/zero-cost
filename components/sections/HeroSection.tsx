@@ -146,7 +146,7 @@ export default function HeroSection() {
               transition: 'opacity 0.85s ease-out 0.4s, transform 0.85s ease-out 0.4s',
             }}
           >
-            起業家のホームページを<wbr />スピーディーに作成
+            起業家に必須なホームページを<wbr />スピーディーに作成
           </p>
 
           {/* Body copy */}
