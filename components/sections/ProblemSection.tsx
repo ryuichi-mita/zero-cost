@@ -28,7 +28,7 @@ export default function ProblemSection() {
           </p>
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
             <span className="text-2xl md:text-4xl font-bold text-gray-900 mb-5">
-              開業初期の資金と集客の<br />不安を解決します
+              開業初期の資金と集客の不安を解決します
             </span>
           </h2>
         </div>
