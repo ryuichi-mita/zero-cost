@@ -17,7 +17,11 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-[680px] md:min-h-[780px] flex items-center overflow-hidden">
+    <section className="relative w-full overflow-hidden" style={{ aspectRatio: undefined }}>
+      {/* 16:9 aspect ratio wrapper for desktop, auto height for mobile */}
+      <div className="hidden md:block" style={{ paddingTop: 'calc(100% * 9 / 16)' }} />
+      <div className="md:hidden min-h-[600px]" />
+
       {/* Background image zoom-in: scale(0.8) → scale(1) */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -99,7 +103,8 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative container mx-auto px-4 py-20 md:py-32">
+      <div className="absolute inset-0 flex items-center">
+      <div className="container mx-auto px-4 py-10 md:py-0">
         <div className="max-w-2xl">
           {/* Eyebrow */}
           <p
@@ -196,6 +201,7 @@ export default function HeroSection() {
             </Link>
           </div>
         </div>
+      </div>
       </div>
 
       <style jsx>{`
