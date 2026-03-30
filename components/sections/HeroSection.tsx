@@ -106,7 +106,7 @@ export default function HeroSection() {
           <p
             className="text-lg md:text-xl font-semibold tracking-wide mb-4 drop-shadow-md"
             style={{
-              color: '#42424242',
+              color: '#ffffff',
               textShadow: '0 1px 6px rgba(0,0,0,0.7)',
               opacity: textVisible ? 1 : 0,
               transform: textVisible ? 'translateX(0)' : 'translateX(-36px)',
