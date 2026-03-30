@@ -127,7 +127,7 @@ export default function HeroSection() {
               transition: 'opacity 0.85s ease-out 0.25s, transform 0.85s ease-out 0.25s',
             }}
           >
-            月額無料＆地域名・業種特化型<br className="hidden sm:block" />
+            <span className="whitespace-nowrap">月額無料＆地域名・業種特化型</span><br />
             <span style={{ color: '#60a5fa', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>ホームページを格安制作</span>
           </h1>
 
