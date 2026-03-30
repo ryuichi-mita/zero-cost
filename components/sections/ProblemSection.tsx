@@ -27,8 +27,13 @@ export default function ProblemSection() {
             ホームページ制作でお困りごとはありませんか？
           </p>
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-            <span className="block">開業初期の資金不足と</span>
-            <span className="block">集客方法の不安を解決します</span>
+            <span className="md:hidden">
+              <span className="block">開業初期の資金不足と</span>
+              <span className="block">集客方法の不安を解決します</span>
+            </span>
+            <span className="hidden md:inline">
+              開業初期の資金不足と集客方法の<br />不安を解決します
+            </span>
           </h2>
         </div>
 

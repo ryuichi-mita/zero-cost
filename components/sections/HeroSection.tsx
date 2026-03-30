@@ -125,9 +125,15 @@ export default function HeroSection() {
               transition: 'opacity 0.85s ease-out 0.25s, transform 0.85s ease-out 0.25s',
             }}
           >
-            <span className="block">月額無料＆地域名・業種での</span>
-            <span className="block">検索に強い</span>
-            <span className="block" style={{ color: '#1d4ed8' }}>ホームページを格安制作</span>
+            <span className="md:hidden">
+              <span className="block">月額無料＆地域名・業種での</span>
+              <span className="block">検索に強い</span>
+              <span className="block" style={{ color: '#1d4ed8' }}>ホームページを格安制作</span>
+            </span>
+            <span className="hidden md:inline">
+              <span className="whitespace-nowrap">月額無料＆地域名・業種での検索に強い</span><br />
+              <span style={{ color: '#1d4ed8' }}>ホームページを格安制作</span>
+            </span>
           </h1>
 
           {/* Lead copy */}
