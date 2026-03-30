@@ -104,40 +104,45 @@ export default function HeroSection() {
         <div className="max-w-2xl">
           {/* Eyebrow */}
           <p
-            className="text-blue-300 font-semibold text-sm md:text-base tracking-widest mb-5"
+            className="text-lg md:text-xl font-semibold tracking-wide mb-4 drop-shadow-md"
             style={{
+              color: '#ffffff',
+              textShadow: '0 1px 6px rgba(0,0,0,0.7)',
               opacity: textVisible ? 1 : 0,
               transform: textVisible ? 'translateX(0)' : 'translateX(-36px)',
               transition: 'opacity 0.8s ease-out 0.1s, transform 0.8s ease-out 0.1s',
             }}
           >
-            開業したてで費用を抑えたいあなたへ
+            開業初期の負担を劇的に減らす
           </p>
 
           {/* Headline */}
           <h1
-            className="text-3xl md:text-5xl lg:text-[3.25rem] font-bold text-white leading-tight mb-5"
+            className="text-3xl md:text-5xl lg:text-[3.25rem] font-bold leading-tight mb-5"
             style={{
+              color: '#ffffff',
+              textShadow: '0 2px 12px rgba(0,0,0,0.75)',
               opacity: textVisible ? 1 : 0,
               transform: textVisible ? 'translateX(0)' : 'translateX(-36px)',
               transition: 'opacity 0.85s ease-out 0.25s, transform 0.85s ease-out 0.25s',
             }}
           >
-            最短3日・<span className="text-blue-400">5万円～</span>で
-            <br className="hidden sm:block" />
-            信用されるホームページを制作
+            月額無料＆地域名・業種特化型<br className="hidden sm:block" />
+            <span style={{ color: '#60a5fa', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>ホームページを格安制作</span>
           </h1>
 
           {/* Lead copy */}
           <p
-            className="text-blue-100 text-base md:text-lg font-medium mb-6"
+            className="text-base md:text-lg font-medium mb-6"
             style={{
+              color: '#f0f9ff',
+              textShadow: '0 1px 8px rgba(0,0,0,0.7)',
               opacity: textVisible ? 1 : 0,
               transform: textVisible ? 'translateX(0)' : 'translateX(-36px)',
               transition: 'opacity 0.85s ease-out 0.4s, transform 0.85s ease-out 0.4s',
             }}
           >
-            スモールビジネスの第一歩を、迅速・低コストで応援
+            開業したての会社様向け、集客につながるホームページをスピーディーに公開
           </p>
 
           {/* Body copy */}
@@ -150,12 +155,12 @@ export default function HeroSection() {
             }}
           >
             {[
-              '開業初期に特化したシンプルプラン',
-              '納期3日・制作費5万円～で圧倒的スピード',
-              '追加費用なしでランニングコストゼロ',
+              '開業初期の資金負担を最小限にする月額無料プラン',
+              '地域名・業種での検索最適化に特化したローカルSEO',
+              '費用対効果の高い集客を実現する専門家サポート',
             ].map((item) => (
-              <li key={item} className="flex items-start gap-2 text-gray-200 text-sm md:text-base">
-                <span className="mt-1 flex-shrink-0 w-4 h-4 rounded-full bg-blue-500 flex items-center justify-center">
+              <li key={item} className="flex items-start gap-2 text-sm md:text-sm" style={{ color: '#e0f2fe', textShadow: '0 1px 6px rgba(0,0,0,0.65)' }}>
+                <span className="mt-1 flex-shrink-0 w-4 h-4 rounded-full bg-blue-500 flex items-center justify-center shadow-md">
                   <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 10 8" aria-hidden="true">
                     <path d="M1 4l2.5 2.5L9 1" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
