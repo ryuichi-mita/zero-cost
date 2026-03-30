@@ -160,8 +160,8 @@ export default function HeroSection() {
           >
             {[
               '月額無料プランで初期の負担を最小限に',
-              '地域名・業種での検索に強いローカルSEO',
-              '費用対効果の高い運用を専門的にサポート',
+              'ローカルSEOで地域名・業種での検索に強く',
+              '専門的サポートで費用対効果の高い運用を',
             ].map((item) => (
               <li key={item} className="flex items-start gap-2 text-base md:text-lg" style={{ color: '#374151' }}>
                 <span className="mt-1 flex-shrink-0 w-4 h-4 rounded-full bg-blue-500 flex items-center justify-center shadow-md">
