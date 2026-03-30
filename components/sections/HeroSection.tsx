@@ -22,8 +22,7 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage:
-            "url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600')",
+          backgroundImage: "url('/heroback.webp')",
           animation: 'heroZoomIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards',
         }}
         aria-hidden="true"
