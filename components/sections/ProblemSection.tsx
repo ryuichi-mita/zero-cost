@@ -32,7 +32,7 @@ export default function ProblemSection() {
               <span className="block">集客の不安を解決します</span>
             </span>
             <span className="hidden md:inline">
-              開業初期の資金不足と集客方法の<br />不安を解決します
+              開業初期の資金と集客の<br />不安を解決します
             </span>
           </h2>
         </div>
