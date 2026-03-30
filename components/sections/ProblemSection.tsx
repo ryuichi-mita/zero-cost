@@ -26,8 +26,9 @@ export default function ProblemSection() {
           <p className="text-blue-600 font-semibold text-base tracking-wide mb-4">
             ホームページ制作でお困りごとはありませんか？
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-            開業初期の資金不足と集客方法の<br />不安を解決します
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+            <span className="block">開業初期の資金不足と</span>
+            <span className="block">集客方法の不安を解決します</span>
           </h2>
         </div>
 
@@ -51,8 +52,8 @@ export default function ProblemSection() {
 
         <div className="flex flex-col items-center mt-12 gap-4">
           <ChevronDown className="w-8 h-8 text-blue-400 animate-bounce" />
-          <p className="text-center text-gray-700 font-semibold text-base md:text-lg max-w-xl leading-relaxed">
-            月額無料＋地域名・業種での検索に強いホームページで、<br className="hidden sm:block" />開業初期のビジネスを支えます
+          <p className="text-center text-gray-700 font-semibold text-sm md:text-lg max-w-xl leading-relaxed">
+            月額無料＋地域名・業種での検索に強いホームページで、<br />開業初期のビジネスを支えます
           </p>
         </div>
       </div>

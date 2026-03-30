@@ -33,8 +33,8 @@ export default function SolutionSection() {
           <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-5">
             MarkeShitenが選ばれる理由
           </h2>
-          <p className="text-gray-500 text-base leading-relaxed">
-            戦略・実行・分析をワンチームで担うことで、スピーディーかつ一貫した成果を提供します。
+          <p className="text-gray-500 text-sm md:text-base leading-relaxed">
+            戦略・実行・分析をワンチームで担うことで、<wbr />スピーディーかつ一貫した成果を提供します。
           </p>
         </div>
 

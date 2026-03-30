@@ -104,7 +104,7 @@ export default function HeroSection() {
         <div className="max-w-2xl">
           {/* Eyebrow */}
           <p
-            className="text-xl md:text-2xl font-semibold tracking-wide mb-4"
+            className="text-base md:text-2xl font-semibold tracking-wide mb-4"
             style={{
               color: '#1e3a5f',
               opacity: textVisible ? 1 : 0,
@@ -125,13 +125,14 @@ export default function HeroSection() {
               transition: 'opacity 0.85s ease-out 0.25s, transform 0.85s ease-out 0.25s',
             }}
           >
-            <span className="whitespace-nowrap">月額無料＆地域名・業種での検索に強い</span><br />
-            <span style={{ color: '#1d4ed8' }}>ホームページを格安制作</span>
+            <span className="block">月額無料＆地域名・業種での</span>
+            <span className="block">検索に強い</span>
+            <span className="block" style={{ color: '#1d4ed8' }}>ホームページを格安制作</span>
           </h1>
 
           {/* Lead copy */}
           <p
-            className="text-lg md:text-xl font-medium mb-6"
+            className="text-base md:text-xl font-medium mb-6"
             style={{
               color: '#1f2937',
               opacity: textVisible ? 1 : 0,
@@ -139,7 +140,7 @@ export default function HeroSection() {
               transition: 'opacity 0.85s ease-out 0.4s, transform 0.85s ease-out 0.4s',
             }}
           >
-            開業したての事業者様に、集客ホームページをスピーディーに作成
+            開業したての事業者様に、<wbr />集客ホームページをスピーディーに作成
           </p>
 
           {/* Body copy */}
