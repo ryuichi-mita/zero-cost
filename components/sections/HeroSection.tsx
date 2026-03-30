@@ -125,7 +125,7 @@ export default function HeroSection() {
               transition: 'opacity 0.85s ease-out 0.25s, transform 0.85s ease-out 0.25s',
             }}
           >
-            <span className="whitespace-nowrap">月額無料＆地域名・業種特化型</span><br />
+            <span className="whitespace-nowrap">月額無料＆地域名・業種での検索に強い</span><br />
             <span style={{ color: '#1d4ed8' }}>ホームページを格安制作</span>
           </h1>
 
@@ -139,7 +139,7 @@ export default function HeroSection() {
               transition: 'opacity 0.85s ease-out 0.4s, transform 0.85s ease-out 0.4s',
             }}
           >
-            開業したての会社様向け、集客につながるホームページをスピーディーに公開
+            開業したての事業者様に、集客ホームページをスピーディーに作成
           </p>
 
           {/* Body copy */}
