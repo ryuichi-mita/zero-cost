@@ -31,7 +31,7 @@ export default function ProblemSection() {
               <span className="block">開業初期の資金と</span>
               <span className="block">集客の不安を解決します</span>
             </span>
-            <span className="hidden md:inline">
+            <span className="text-2xl md:text-4xl font-bold text-gray-900 mb-5">
               開業初期の資金と集客の<br />不安を解決します
             </span>
           </h2>
